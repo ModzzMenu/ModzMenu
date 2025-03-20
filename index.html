@@ -44,14 +44,14 @@
     transform: rotateY(-20deg) rotateX(-10deg);
    }
    body {
-    background: url('https://cdn.discordapp.com/attachments/1336681617971871827/1350972168707768330/Gif_banner_1.gif?ex=67d95720&is=67d805a0&hm=f2d9354fefcda662abfb4d4942885c8707bcd24dbefa937a8c58fa8c5c5f9ea4&') no-repeat center center fixed;
+    background: url('assets/images/banner.gif') no-repeat center center fixed;
     background-size: cover;
    }
   </style>
  </head>
  <body class="text-gray-300 bg-opacity-75">
   <header class="flex justify-between items-center p-4 fade-in bg-opacity-75">
-   <img alt="Logo" class="h-8" height="50" src="https://cdn.discordapp.com/attachments/1308126691553443840/1351291816963477615/modz.png?ex=67d9d812&is=67d88692&hm=40caaabf1822aa01add922a30a174ea1672b7325680555579790b2f9a2f308d3&" width="80"/>
+   <img alt="Logo" class="h-8" height="50" src="assets/images/logo.png" width="80"/>
    <nav class="space-x-4">
     <a class="text-gray-500 hover:text-gray-300 transition duration-300" href="#">
      Tiktok
@@ -85,9 +85,9 @@
       Dołącz do Discorda
      </span>
     </a>
-    <a href="https://elektrykk.is-scamming.me/content/cdn/jzPTBlDDcanI/MODZMENU.rar" target="_blank" class="bg-gray-800 text-gray-300 px-4 py-2 rounded flex items-center space-x-2 hover:bg-gray-700 transition duration-300">
+    <a href="https://discord.gg/Pm5rEd47DX" target="_blank" class="bg-gray-800 text-gray-300 px-4 py-2 rounded flex items-center space-x-2 hover:bg-gray-700 transition duration-300">
      <span>
-      Pobierz potrzebne pliki do menu
+      Rozpocznij
      </span>
      <i class="fas fa-arrow-right">
      </i>
@@ -187,7 +187,7 @@
       <li>Rockstar ID Tools</li>
       <li>Advanced Protections</li>
       <li>Advanced Antycheat Bypass</li>
-      <li>Advanced Antycheat Bypass</li>
+
      </ul>
      <div class="flex flex-col space-y-2">
       <button class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded" href="https://discord.gg/modzzmarket">
@@ -198,7 +198,7 @@
   
     <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 m-4 w-full md:w-1/3 shadow-lg transform transition duration-500 hover:scale-105">
      <div class="flex justify-center mb-4">
-      <img alt="Red N logo" class="h-24" src="https://cdn.discordapp.com/attachments/1308126691553443840/1351291816963477615/modz.png?ex=67db2992&is=67d9d812&hm=4fdaaefa529e1d908ed4ae3ef4d23bbec2885afddc44a4b5d27ffa8ead401e88&"/>
+      <img alt="Red N logo" class="h-24" src="assets/images/logo.png"/>
      </div>
      <h2 class="text-center text-2xl font-bold mb-2 text-pink-500">
       Modzz Premium
@@ -221,7 +221,7 @@
       <li>Rockstar ID Tools</li>
       <li>Advanced Protections</li>
       <li>Advanced Antycheat Bypass</li>
-      <li>Advanced Antycheat Bypass</li>
+    
      </ul
      <div class="flex flex-col space-y-2">
       <button class="bg-red-600 hover:bg-red-500 text-white font-bold py-2 px-4 rounded">
@@ -232,19 +232,19 @@
     </div>
    </div>
      <h2 class="text-2xl font-bold text-pink-500 mt-16 slide-in">
-     Zobacz ModzzMenu w akcji
+    Zobacz ModzzMenu w akcji
    </h2>
    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 slide-in">
     <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
      <video class="w-full rounded-lg" controls>
-      <source src="https://cdn.discordapp.com/attachments/1308126691553443840/1352017771034181712/plik1.mp4?ex=67dc7c2b&is=67db2aab&hm=acfe308b63591cc39ce9e576703e51bc469a2c3b0a63f9bbccd0057bf9854e64&" type="video/mp4"/>
-      Your browser does not support the video tag.
+      <source src="https://cdn.discordapp.com/attachments/1308126691553443840/1352017771034181712/plik1.mp4?ex=67ddcdab&is=67dc7c2b&hm=423fb9b9a4357830a8783a10c6742d825d514754698bed3be7caef44278e2e14&" type="video/mp4"/>
+
      </video>
     </div>
     <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
      <video class="w-full rounded-lg" controls>
-      <source src="https://cdn.discordapp.com/attachments/1308126691553443840/1352017772279763000/plik2.mp4?ex=67dc7c2c&is=67db2aac&hm=c8434d4268c79d3b739423bc5c62994ae52b8562252e3c48d2cc666c37a0d3a7&" type="video/mp4"/>
-     
+      <source src="https://cdn.discordapp.com/attachments/1308126691553443840/1352017772279763000/plik2.mp4?ex=67ddcdac&is=67dc7c2c&hm=ebb20fb2590209cefaa2e7399825298af82e759f9fb3e9d1b86919552f05064f&" type="video/mp4"/>
+
      </video>
     </div>
    </div>
@@ -257,17 +257,8 @@
     document.addEventListener('DOMContentLoaded', function() {
       const audio = document.getElementById('bgMusic');
       audio.volume = 0.5;
-      
-      // Add click event listener to document
-      document.addEventListener('click', function() {
-        audio.play().catch(function(error) {
-          console.log("Audio playback failed:", error);
-        });
-      }, { once: true });
-
-      // Try autoplay
       audio.play().catch(function(error) {
-        console.log("Audio autoplay failed, waiting for user interaction:", error);
+        console.log("Audio autoplay failed:", error);
       });
     });
   </script>
