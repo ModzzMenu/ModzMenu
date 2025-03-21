@@ -253,13 +253,21 @@
    <source src="audio/mp3/modzz.mp3" type="audio/mp3"/>
    Your browser does not support the audio element.
   </audio>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
+   <script>
+    window.addEventListener('load', function() {
       const audio = document.getElementById('bgMusic');
       audio.volume = 0.5;
-      audio.play().catch(function(error) {
-        console.log("Audio autoplay failed:", error);
-      });
+
+      function playAudio() {
+        audio.play().catch(function(error) {
+          console.log("Audio playback failed:", error);
+        });
+      }
+
+      document.addEventListener('click', playAudio, { once: true });
+      document.addEventListener('keydown', playAudio, { once: true });
+
+      playAudio();
     });
   </script>
  </body>
