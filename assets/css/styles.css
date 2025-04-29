@@ -1,0 +1,270 @@
+/* Base Styles */
+:root {
+    --primary: #ec4899;
+    --primary-dark: #db2777;
+    --secondary: #1e293b;
+    --accent: #7c3aed;
+    --discord: #5865F2;
+    --text: #f1f5f9;
+    --text-secondary: #d1d5db;
+    --bg-dark: #0f172a;
+    --bg-light: #1e293b;
+}
+
+body {
+    background: url('../images/banner.gif') fixed center/cover;
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(236, 72, 153, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.5); }
+    100% { box-shadow: 0 0 10px rgba(236, 72, 153, 0.3); }
+}
+
+/* Components */
+.main-header {
+    background: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(236, 72, 153, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-title {
+    text-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.menu-preview {
+    border: 3px solid rgba(236, 72, 153, 0.3);
+    box-shadow: 0 20px 40px -15px rgba(236, 72, 153, 0.3);
+    transition: all 0.3s ease;
+}
+
+.menu-preview:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 25px 50px -10px rgba(236, 72, 153, 0.4);
+}
+
+/* Feature Cards */
+.feature-card {
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+    border: 1px solid rgba(236, 72, 153, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px -10px rgba(236, 72, 153, 0.3);
+    border-color: var(--primary);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+}
+
+/* Pricing Cards */
+.price-card {
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.95));
+    transition: all 0.4s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px -15px rgba(236, 72, 153, 0.3);
+}
+
+.free-version {
+    border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+.premium-version {
+    border: 2px solid var(--primary);
+    animation: glow 3s infinite;
+}
+
+.price {
+    font-size: 2rem;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Discord Section */
+.discord-section {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+    border: 1px solid rgba(88, 101, 242, 0.3);
+}
+
+.discord-widget {
+    transition: all 0.3s ease;
+}
+
+.discord-widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(88, 101, 242, 0.3);
+}
+
+.discord-stats {
+    background: rgba(88, 101, 242, 0.1);
+}
+
+.stat-item {
+    background: rgba(88, 101, 242, 0.2);
+    border-left: 3px solid var(--discord);
+}
+
+.highlight {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+}
+
+.discord-join-btn {
+    background: var(--discord);
+    transition: all 0.3s ease;
+}
+
+.discord-join-btn:hover {
+    background: #4752c4;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(88, 101, 242, 0.4);
+}
+
+/* Testimonials */
+.testimonials-track {
+    animation: scroll 30s linear infinite;
+}
+
+.testimonial-card {
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+    border: 1px solid rgba(236, 72, 153, 0.2);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.3);
+}
+
+/* Video Showcase */
+.video-container {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(236, 72, 153, 0.2);
+    transition: all 0.3s ease;
+}
+
+.video-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.3);
+}
+
+/* Update Card */
+.update-card {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+    border-left: 4px solid var(--primary);
+}
+
+.update-icon {
+    background: rgba(236, 72, 153, 0.2);
+    animation: pulse 2s infinite;
+}
+
+/* Footer */
+.main-footer {
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9));
+    border-top: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+.social-links a {
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: var(--primary);
+}
+
+/* Utility Classes */
+.animate-pop {
+    animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.float-anim {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-cards {
+        flex-direction: column;
+    }
+    
+    .discord-container {
+        flex-direction: column;
+    }
+    
+    .testimonials-track {
+        animation: scroll-mobile 30s linear infinite;
+    }
+    
+    @keyframes scroll-mobile {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+}

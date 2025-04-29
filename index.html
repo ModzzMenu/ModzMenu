@@ -1,274 +1,1306 @@
-<html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   ModzzMenu
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModzzMenu - Premium GTA V Mod</title>
+    
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/bg.css">
+    <link rel="stylesheet" href="assets/css/modern.css">
+    <script src="js/discord.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/scroll-reveal.js"></script>
+    <script src="js/countdown.js"></script>
+   
+    
+    <style>
+        :root {
+            --primary: #ec4899;
+            --secondary: #1e293b;
+            --accent: #7c3aed;
+            --text: #f1f5f9;
+        }
+        
+        body {
+            background: url('assets/images/banner.gif') fixed center/cover;
+            color: var(--text);
+            min-height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+        }
+        
+     
+        #bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+            opacity: 0;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: var(--opacity); }
+        }
+       
 
-   <link rel="stylesheet" href="assets/css/bg.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .animate-pop {
+            animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        
+        .float-anim {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .pulse-anim {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+ 
+        .testimonials-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .testimonials-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+ 
+        header {
+            background: rgba(30, 41, 59, 0.95);
+            border-bottom: 1px solid rgba(236, 72, 153, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+    
+        .feature-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+            border: 1px solid rgba(236, 72, 153, 0.15);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.3);
+            border-color: var(--primary);
+        }
+        
+ 
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -5px rgba(236, 72, 153, 0.4);
+        }
+        
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover::after {
+            left: 100%;
+        }
+        
+        
+        .update-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+            border-left: 4px solid var(--primary);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
 
-  <style>
-   @keyframes fadeIn {
-    from {
-     opacity: 0;
-    }
-    to {
-     opacity: 1;
-    }
-   }
-   @keyframes slideIn {
-    from {
-     transform: translateY(20px);
-     opacity: 0;
-    }
-    to {
-     transform: translateY(0);
-     opacity: 1;
-    }
-   }
-   .fade-in {
-    animation: fadeIn 2s ease-in-out;
-   }
-   .slide-in {
-    animation: slideIn 1s ease-in-out;
-   }
-   .image-3d {
-    transition: transform 0.5s;
-    transform-style: preserve-3d;
-   }
-   .image-3d:hover {
-    transform: rotateY(-20deg) rotateX(-10deg);
-   }
-   body {
-    background: url('assets/images/banner.gif') no-repeat center center fixed;
-    background-size: cover;
-   }
-  </style>
- </head>
- <body class="text-gray-300 bg-opacity-75">
-  <header class="flex justify-between items-center p-4 fade-in bg-opacity-75">
-   <img alt="Logo" class="h-8" height="50" src="assets/images/logo.png" width="80"/>
-   <nav class="space-x-4">
-    <a class="text-gray-500 hover:text-gray-300 transition duration-300" href="https://www.tiktok.com/@modzzmarket_">
-     Tiktok
-    </a>
-    <a class="text-gray-500 hover:text-gray-300 transition duration-300" href="https://www.youtube.com/watch?v=WRX6mHZ1Lc4">
-     Showcase
-    </a>
-    <a class="text-gray-500 hover:text-gray-300 transition duration-300" href="https://discord.gg/Pm5rEd47DX">
-     Discord
-    </a>
+        
+        .discord-integration {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+            border: 1px solid rgba(88, 101, 242, 0.3);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
 
-   </nav>
-   <div class="flex items-center space-x-2">
-    <div class="bg-gray-800 p-2 rounded">
+        .discord-stats-item {
+            background: rgba(88, 101, 242, 0.1);
+            border-left: 3px solid #5865F2;
+            transition: all 0.3s ease;
+        }
+        
+        .discord-stats-item:hover {
+            transform: translateX(5px);
+        }
 
+      
+        .live-activity {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(236, 72, 153, 0.2);
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.1);
+        }
+
+        
+        .faq-item {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(236, 72, 153, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary);
+        }
+        
+        .faq-question {
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            width: 0%;
+            transition: width 0.1s ease-out;
+        }
+        
+       
+        .tooltip {
+            position: relative;
+        }
+        
+        .tooltip-text {
+            visibility: hidden;
+            width: 120px;
+            background-color: var(--secondary);
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.8rem;
+            border: 1px solid var(--primary);
+        }
+        
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        
+        .thumbnail {
+            transition: all 0.3s ease;
+        }
+        
+        .thumbnail:hover {
+            transform: scale(1.05);
+        }
+        
+        .thumbnail.active {
+            border-color: var(--primary) !important;
+        }
+        
+        /* Styl dla iframe Discord */
+        .discord-integration iframe {
+            max-width: 100%;
+            width: 100%;
+            min-height: 350px;
+        }
+
+        @media (max-width: 768px) {
+            .discord-integration iframe {
+                height: 400px; 
+            }
+            .mobile-stack {
+                flex-direction: column;
+            }
+            
+            .testimonials-track {
+                animation: scroll-mobile 30s linear infinite;
+            }
+            
+            @keyframes scroll-mobile {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-100%); }
+            }
+            
+            header {
+                padding: 10px 0;
+            }
+            
+            nav {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(30, 41, 59, 0.95);
+                flex-direction: column;
+                padding: 20px;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+            }
+            
+            #gallery .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body class="relative">
+ 
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
     </div>
-   </div>
-  </header>
-  <main class="text-center py-16 bg-opacity-75">
-   <h1 class="text-3xl font-bold text-pink-500 fade-in">
-    Cheaty najwyższej jakości
-   </h1>
-   <p class="text-gray-500 mt-4 fade-in">
-    Modzzmenu jest jednym polskim modmenu które dziala w aktaulnej wersji gry
-   </p>
-   <div class="mt-8 space-x-4 fade-in flex justify-center">
-    <a href="https://discord.gg/Pm5rEd47DX" target="_blank" class="bg-gray-800 text-gray-300 px-4 py-2 rounded flex items-center space-x-2 hover:bg-gray-700 transition duration-300">
-     <i class="fab fa-discord">
-     </i>
-     <span>
-      Dołącz do Discorda
-     </span>
-    </a>
-    <a href="https://elektrykk.is-scamming.me/content/cdn/IxTTkHFAgRoT/MODZMENU%20(1).rar" target="_blank" class="bg-gray-800 text-gray-300 px-4 py-2 rounded flex items-center space-x-2 hover:bg-gray-700 transition duration-300">
-     <span>
-      Pobierz pliki do menu
-     </span>
-     <i class="fas fa-arrow-right">
-     </i>
-    </a>
-   </div>
-<div id="background" style="opacity: 0.1"></div>
+    
+   
     <div id="bg" class="bg-animation">
         <div id="stars"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>
         <div id="stars4"></div>
     </div>
-   <div class="mt-16 slide-in">
-    <img alt="modzzzzzz menu" class="mx-auto rounded-lg shadow-lg image-3d" height="400" src="assets/images/menu.png" width="300"/>
-   </div>
-   <h2 class="text-2xl font-bold text-pink-500 mt-16 slide-in">
-    Dlaczego Modzz?
-   </h2>
-   <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 slide-in">
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
-     <h2 class="text-xl font-bold text-pink-500">
-      ModzzMenu
-     </h2>
-     <p class="text-gray-500 mt-2">
-      Pierwsze modzzmenu powstało 20/07/2024 przez dlugi czas bylo aktualizowane dla naszych wspanialych uzytkownikow az do momenu battleye update, teraz powrocilismy silniejsi
-     </p>
+    
+    
+    <div class="min-h-screen">
+
+        <header class="sticky top-0 z-50 py-4 px-6 shadow-md">
+            <div class="max-w-6xl mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/images/logo.png" alt="Logo" class="h-10 w-10 animate-pop tooltip" id="logo">
+                    <span class="text-xl font-bold text-pink-500">ModzzMenu</span>
+                    <span class="tooltip-text">Powrót na górę!</span>
+                </div>
+                
+                <nav class="hidden md:flex space-x-6">
+                    <a href="https://tiktok.com/@modzzmarket_" class="text-gray-300 hover:text-pink-500 transition flex items-center space-x-1 tooltip">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                        <span class="tooltip-text">Odwiedź nasz TikTok</span>
+                    </a>
+                    <a href="#showcase" class="text-gray-300 hover:text-pink-500 transition flex items-center space-x-1 tooltip">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Showcase</span>
+                        <span class="tooltip-text">Zobacz demo</span>
+                    </a>
+                    <a href="https://discord.gg/modzzmarket" class="text-gray-300 hover:text-pink-500 transition flex items-center space-x-1 tooltip">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord</span>
+                        <span class="tooltip-text">Dołącz do Discorda</span>
+                    </a>
+                    <a href="#ceny" class="text-gray-300 hover:text-pink-500 transition flex items-center space-x-1 tooltip">
+                        <i class="fas fa-tags"></i>
+                        <span>Cennik</span>
+                        <span class="tooltip-text">Zobacz ceny</span>
+                    </a>
+                </nav>
+                
+                <button class="md:hidden text-gray-300" id="mobileMenuBtn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </header>
+
+       
+        <main class="max-w-6xl mx-auto py-12 px-6">
+ 
+            <section class="text-center mb-20 animate-pop" style="animation-delay: 0.1s;">
+                <h1 class="text-4xl md:text-5xl font-bold text-pink-500 mb-4">Cheaty Najwyższej Jakości</h1>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+                    ModzzMenu - polskie mod menu działające w aktualnej wersji gry z pełnym bypassem
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <a href="https://discord.gg/modzzmarket" class="btn-primary text-white px-6 py-3 rounded-lg flex items-center space-x-2 pulse-anim">
+                        <i class="fab fa-discord"></i>
+                        <span>Dołącz do Discorda</span>
+                    </a>
+                    <a href="https://elektrykk.is-scamming.me/content/cdn/IxTTkHFAgRoT/MODZMENU%20(1).rar" class="bg-gray-800 hover:bg-gray-700 text-gray-300 px-6 py-3 rounded-lg flex items-center space-x-2 transition">
+                        <i class="fas fa-download"></i>
+                        <span>Pobierz</span>
+                    </a>
+                </div>
+                
+                <div class="max-w-md mx-auto animate-pop" style="animation-delay: 0.2s;">
+                    <img src="assets/images/menu.png" alt="Podgląd menu" class="rounded-xl border-2 border-pink-500/30 shadow-2xl w-full float-anim hover:scale-105 transition-transform duration-300 cursor-pointer" id="menuPreview">
+                </div>
+            </section>
+
+
+            <section id="features" class="mb-20">
+                <h2 class="text-3xl font-bold text-center text-pink-500 mb-12 animate-pop">Dlaczego Modzz?</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <div class="feature-card rounded-xl p-6 animate-pop" style="animation-delay: 0.3s;">
+                        <h3 class="text-2xl font-bold text-pink-500 mb-4">ModzzMenu</h3>
+                        <p class="text-gray-300">
+                            Pierwsze modzzmenu powstało 20/07/2024 i było regularnie aktualizowane dla naszych użytkowników aż do aktualizacji BattlEye. Teraz wracamy silniejsi niż kiedykolwiek!
+                        </p>
+                        
+                    </div>
+                    
+               
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="feature-card rounded-lg p-4 animate-pop" style="animation-delay: 0.4s;">
+                            <div class="text-3xl text-pink-500 mb-2">🧠</div>
+                            <h4 class="text-xl font-bold text-pink-500 mb-2">Unikalne Funkcje</h4>
+                            <p class="text-gray-300 text-sm">Skupiamy się na integrowaniu unikalnych pomysłów</p>
+                        </div>
+                        
+                        <div class="feature-card rounded-lg p-4 animate-pop" style="animation-delay: 0.5s;">
+                            <div class="text-3xl text-pink-500 mb-2">🎨</div>
+                            <h4 class="text-xl font-bold text-pink-500 mb-2">Custom UI</h4>
+                            <p class="text-gray-300 text-sm">Pełna personalizacja interfejsu</p>
+                        </div>
+                        
+                        <div class="feature-card rounded-lg p-4 animate-pop" style="animation-delay: 0.6s;">
+                            <div class="text-3xl text-pink-500 mb-2">⚡</div>
+                            <h4 class="text-xl font-bold text-pink-500 mb-2">Wydajność</h4>
+                            <p class="text-gray-300 text-sm">Optymalizacja</p>
+                        </div>
+                        
+                        <div class="feature-card rounded-lg p-4 animate-pop" style="animation-delay: 0.7s;">
+                            <div class="text-3xl text-pink-500 mb-2">🛡️</div>
+                            <h4 class="text-xl font-bold text-pink-500 mb-2">Bypass</h4>
+                            <p class="text-gray-300 text-sm">100% bezpieczeństwa</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="pricing" class="mb-20">
+                <h2 class="text-3xl font-bold text-center text-pink-500 mb-12 animate-pop">Wybierz Swoją Wersję</h2>
+                
+                <div class="flex flex-col md:flex-row gap-6 justify-center">
+
+                    <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 w-full md:w-1/3 animate-pop" style="animation-delay: 0.4s;">
+                        <div class="text-center mb-4">
+                            <img src="assets/images/logo.png" alt="Free Version" class="h-20 mx-auto">
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-center text-pink-500 mb-2">Modzz Free</h3>
+                        <p class="text-center text-gray-300 mb-4">
+                            Klucz na 48 godzin<br>
+                            <span class="text-xl font-bold">0 zł</span>
+                        </p>
+                        
+                        <ul class="space-y-2 mb-6 text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 mt-1 mr-2"></i>
+                                <span>VFX Engine</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 mt-1 mr-2"></i>
+                                <span>Session Browser</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 mt-1 mr-2"></i>
+                                <span>Player Tracker</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 mt-1 mr-2"></i>
+                                <span>Basic Protections</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 mt-1 mr-2"></i>
+                                <span>Teleport All</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 mt-1 mr-2"></i>
+                                <span>Wiele więcej...</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="" class="btn-primary text-white font-bold py-3 px-4 rounded-lg block text-center">
+                            Odbierz Klucz
+                        </a>
+                    </div>
+                    
+
+                    <div class="bg-gray-800/90 border-2 border-pink-500/50 rounded-xl p-6 w-full md:w-1/3 animate-pop" style="animation-delay: 0.5s;">
+                        <div class="text-center mb-4">
+                            <img src="assets/images/logo.png" alt="Premium Version" class="h-20 mx-auto">
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-center text-pink-500 mb-2">Modzz Premium</h3>
+                        <p class="text-center text-gray-300 mb-4">
+                            Dostęp na zawsze<br>
+                            <span class="text-xl font-bold">20 zł</span>
+                        </p>
+                        
+                        <ul class="space-y-2 mb-6 text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 mt-1 mr-2"></i>
+                                <span>VFX Engine</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 mt-1 mr-2"></i>
+                                <span>Session Browser</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 mt-1 mr-2"></i>
+                                <span>Player Tracker</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 mt-1 mr-2"></i>
+                                <span>Basic Protections</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 mt-1 mr-2"></i>
+                                <span>Teleport All</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 mt-1 mr-2"></i>
+                                <span>Wiele więcej...</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#" class="btn-primary text-white font-bold py-3 px-4 rounded-lg block text-center shadow-lg">
+                            Kup Teraz
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+   
+            <section id="discord-integration" class="mb-20 discord-integration rounded-xl overflow-hidden animate-pop" style="animation-delay: 0.6s;">
+                <div class="flex flex-col lg:flex-row">
+
+                    <div class="flex-1 p-6">
+                        <h2 class="text-3xl font-bold text-center text-[#5865F2] mb-6">
+                            <i class="fab fa-discord mr-2"></i> Dołącz do naszej społeczności
+                        </h2>
+                        <iframe src="https://discord.com/widget?id=1247489384794558485&theme=dark" 
+                                width="100%" 
+                                height="500" 
+                                allowtransparency="true" 
+                                frameborder="0" 
+                                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                                class="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                                onerror="this.style.display='none'; document.getElementById('discord-fallback').style.display='block';"></iframe>
+                        <div id="discord-fallback" style="display: none; text-align: center; color: #fff; background: #2C2F33; padding: 20px; border-radius: 8px;">
+                            Nie udało się załadować widgetu. <a href="https://discord.gg/modzzmarket" target="_blank" class="text-[#5865F2] underline">Dołącz do nas na Discordzie!</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-1 p-6">
+                        <div class="flex items-center mb-6">
+                            <i class="fab fa-discord text-4xl text-[#5865F2] mr-3"></i>
+                            <h3 class="text-2xl font-bold">Modzz Community</h3>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="discord-stats-item p-4 rounded-lg">
+                                <h4 class="text-lg font-bold text-pink-500 mb-3">Dlaczego warto dołączyć?</h4>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-pink-500 mr-2 mt-1"></i>
+                                        <span>Wsparcie techniczne</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-pink-500 mr-2 mt-1"></i>
+                                        <span>Dostęp do dodatkowych plików do menu</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-pink-500 mr-2 mt-1"></i>
+                                        <span>Automatyczne powiadomienia o aktualizacjach</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="discord-stats-item p-3 rounded-lg">
+                                    <p class="text-gray-400 text-sm">Członkowie</p>
+                                    <p class="text-xl font-mono">4.1k+</p>
+                                </div>
+                                <div class="discord-stats-item p-3 rounded-lg">
+                                    <p class="text-gray-400 text-sm">Online</p>
+                                    <p class="text-xl font-mono text-pink-500">1k+</p>
+                                </div>
+                            </div>
+                            
+                            <a href="https://discord.gg/modzzmarket" 
+                               class="block bg-[#5865F2] hover:bg-[#4752C4] text-white py-3 px-4 rounded-lg text-center transition shadow-lg hover:translate-y-[-2px]">
+                                <i class="fab fa-discord mr-2"></i> Dołącz teraz
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="faq" class="mb-20 animate-pop" style="animation-delay: 0.7s;">
+                <h2 class="text-3xl font-bold text-center text-pink-500 mb-8">FAQ - Często Zadawane Pytania</h2>
+                
+                <div class="max-w-4xl mx-auto space-y-4">
+
+                    <div class="faq-item rounded-lg overflow-hidden">
+                        <div class="faq-question p-4 flex justify-between items-center bg-gray-800/80 cursor-pointer">
+                            <h3 class="text-lg font-bold">Jak zainstalować ModzzMenu?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer bg-gray-800/50">
+                            <div class="p-4">
+                                <p>Instalacja jest bardzo prosta:</p>
+                                <ol class="list-decimal list-inside mt-2 space-y-1">
+                                    <li>Pobierz plik z naszej strony</li>
+                                    <li>Wypakuj archiwum i dodaj dane pliki do appdaty</li>
+                                    <li>Włącz loadera</li>
+                                    <li>Zainjectuj w main menu</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                    <div class="faq-item rounded-lg overflow-hidden">
+                        <div class="faq-question p-4 flex justify-between items-center bg-gray-800/80 cursor-pointer">
+                            <h3 class="text-lg font-bold">Czy ModzzMenu jest bezpieczne?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer bg-gray-800/50">
+                            <div class="p-4">
+                                <p>Tak, ModzzMenu posiada pełny bypass aktualnego systemu antycheata. Nasze menu jest regularnie aktualizowane, aby zapewnić 100% bezpieczeństwa naszym użytkownikom.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="faq-item rounded-lg overflow-hidden">
+                        <div class="faq-question p-4 flex justify-between items-center bg-gray-800/80 cursor-pointer">
+                            <h3 class="text-lg font-bold">Jakie są różnice między wersją darmową a premium?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer bg-gray-800/50">
+                            <div class="p-4">
+                                <p>Różni się tylko tym, że płatne jest na zawsze a free klucz za reklamy co 2 dni:</p>
+                                <div class="mt-4 bg-gray-700/50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-pink-500 mb-2">Porównanie wersji:</h4>
+                                    <table class="w-full text-sm">
+                                        <tr class="border-b border-gray-600">
+                                            <td class="py-2">Czas trwania</td>
+                                            <td class="text-right">48h</td>
+                                            <td class="text-right text-green-400">Na zawsze</td>
+                                        </tr>
+                                        <tr class="border-b border-gray-600">
+                                            <td class="py-2">Funkcje</td>
+                                            <td class="text-right">Podstawowe</td>
+                                            <td class="text-right text-green-400">Pełne</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2">Wsparcie</td>
+                                            <td class="text-right">Podstawowe</td>
+                                            <td class="text-right text-green-400">Priorytetowe</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                  
+                    <div class="faq-item rounded-lg overflow-hidden">
+                        <div class="faq-question p-4 flex justify-between items-center bg-gray-800/80 cursor-pointer">
+                            <h3 class="text-lg font-bold">Jak mogę uzyskać pomoc techniczną?</h3>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer bg-gray-800/50">
+                            <div class="p-4">
+                                <p>Nasz zespół wsparcia jest dostępny na naszym serwerze Discord. Możesz także skontaktować się z nami poprzez:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-1">
+                                    <li>Ticket na Discordzie</li>
+                                    <li>Wiadomość prywatną do moderatorów</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+<section class="mb-20 animate-pop" style="animation-delay: 0.8s;">
+    <h2 class="text-3xl font-bold text-center text-pink-500 mb-12">Opinie Naszych Klientów</h2>
+    
+    <div class="testimonials-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+           
+            <div class="testimonial-card bg-gray-800/70 p-8 rounded-xl border border-pink-500/20 hover:border-pink-500/50 transition-all h-full">
+                <div class="flex items-center mb-6">
+                    <img src="https://cdn.discordapp.com/avatars/872534191768739901/940419db7cc3857694269c01e42b0551.png?size=512" class="w-16 h-16 rounded-full mr-5 border-2 border-pink-500/50">
+                    <div>
+                        <h4 class="font-bold text-xl">✞𝔄𝔨𝔰𝔞𝔪𝔦𝔱✞
+                        </h4>
+                        <div class="text-yellow-400 mt-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-lg leading-relaxed">"Spoko menu (nie ma żadnych wirusów) ja tam miałem małe problemy ale tak to spoko jak testowałem P.S polecam pisać tickety moderacja jest bardzo pomocna i miła ❤️"</p>
+            </div>
+      
+            <div class="testimonial-card bg-gray-800/70 p-8 rounded-xl border border-pink-500/20 hover:border-pink-500/50 transition-all h-full">
+                <div class="flex items-center mb-6">
+                    <img src="https://cdn.discordapp.com/avatars/1333161634180366399/cae01b29aec693213c1ebf5fde12b5b8.png?size=512" class="w-16 h-16 rounded-full mr-5 border-2 border-pink-500/50">
+                    <div>
+                        <h4 class="font-bold text-xl">Dziadek_maciek
+                        </h4>
+                        <div class="text-yellow-400 mt-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-lg leading-relaxed">"te menu to najlepsze darmowe modmenu po prostu zajebiste POLECAM a jak cos wam nie dziala do moderacja jest wspaniała odrazu pomoze 10/10"</p>
+            </div>
+            
+        
+            <div class="testimonial-card bg-gray-800/70 p-8 rounded-xl border border-pink-500/20 hover:border-pink-500/50 transition-all h-full">
+                <div class="flex items-center mb-6">
+                    <img src="https://cdn.discordapp.com/avatars/313055006838226945/5a03da480bdf0748adc96a885d9ea15c.png?size=512" class="w-16 h-16 rounded-full mr-5 border-2 border-pink-500/50">
+                    <div>
+                        <h4 class="font-bold text-xl">.mr.Sherman
+                        </h4>
+                        <div class="text-yellow-400 mt-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-lg leading-relaxed">"najlepszy cheat jaki miałem dotychczas jednak jedną wadą jest brak dodawania pieniędzy ale pisałem z elektrykiem i mówił ze doda wiec jak doda to 10/10 a teraz bez tego to  SEND9/10 pozdro <3"</p>
+            </div>
+            
+            <div class="testimonial-card bg-gray-800/70 p-8 rounded-xl border border-pink-500/20 hover:border-pink-500/50 transition-all h-full">
+                <div class="flex items-center mb-6">
+                    <img src="https://cdn.discordapp.com/avatars/950019300092182569/aeec87a6835a84db02a653098d846c14.png?size=512" class="w-16 h-16 rounded-full mr-5 border-2 border-pink-500/50">
+                    <div>
+                        <h4 class="font-bold text-xl">𖤍𝕻𝕾Maja𖤍𝕻𝕾
+                        </h4>
+                        <div class="text-yellow-400 mt-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-lg leading-relaxed">"Zajebiste mody niektóre płatne sa gorsze od tych dzieki za te darmowe jak beda auto napady/przygotowania to 11/10 a tak narazie to 10/10"</p>
+            </div>
+            
+        
+            <div class="testimonial-card bg-gray-800/70 p-8 rounded-xl border border-pink-500/20 hover:border-pink-500/50 transition-all h-full">
+                <div class="flex items-center mb-6">
+                    <img src="https://cdn.discordapp.com/avatars/1359869145121820853/382e1d3331129b2c9b29be1bbbe3a1e7.png?size=512" class="w-16 h-16 rounded-full mr-5 border-2 border-pink-500/50">
+                    <div>
+                        <h4 class="font-bold text-xl">XdracoX</h4>
+                        <div class="text-yellow-400 mt-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-lg leading-relaxed">"mod menu mega spoko (nie ma wirusów jest bezpieczne) tylko szkoda że: nie ma heist editora i ze klucz trzeba zmieniec co 2 dni.Ogólnie mega fajnie sie korzysta bardzo przejrzyste i łatwe w obsudze podsumowując najlepsze mod menu z jakiego korzystalem,a korzystalem z wielu."</p>
+            </div>
+            
+           
+            <div class="testimonial-card bg-gray-800/70 p-8 rounded-xl border border-pink-500/20 hover:border-pink-500/50 transition-all h-full">
+                <div class="flex items-center mb-6">
+                    <img src="https://cdn.discordapp.com/avatars/1250920772357329022/a_6bae903faa2506364007a382cc5049bf.gif?size=512" class="w-16 h-16 rounded-full mr-5 border-2 border-pink-500/50">
+                    <div>
+                        <h4 class="font-bold text-xl">Viskerr</h4>
+                        <div class="text-yellow-400 mt-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-lg leading-relaxed">"modzz menu jest bardzo dobre  łatwe do ogarniecia mozna sobie porobic stroje pomodowac auta  ogolnie pobawic sie ale jedyny minus brak kasy  mozna lvl itp dodac sobie generalnie dojebane menu 10/10 "</p>
+            </div>
+        </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-     <div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
-      <div class="text-2xl text-pink-500">
-       🧠
-      </div>
-      <h3 class="text-lg font-bold text-pink-500 mt-2">
-       Unikalne funkcje
-      </h3>
-      <p class="text-gray-500 mt-2">
-       Skupiamy się na integrowaniu unikalnych pomysłów, aby były świeże i odróżniały się od innych.
-      </p>
-     </div>
-     <div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
-      <div class="text-2xl text-pink-500">
-       🧩
-      </div>
-      <h3 class="text-lg font-bold text-pink-500 mt-2">
-       Dopasowany design
-      </h3>
-      <p class="text-gray-500 mt-2">
-       Interfejs użytkownika modzz charakteryzuje się niezwykłą wszechstronnością adaptacji, oferuje kompleksowy system motywów i możliwość zapisywania konfiguracji, dzięki czemu użytkownicy mogą dostosować każdy aspekt interfejsu do swoich upodobań.
-      </p>
-     </div>
-     <div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
-      <div class="text-2xl text-pink-500">
-       🤗
-      </div>
-      <h3 class="text-lg font-bold text-pink-500 mt-2">
-       Łatwość w obsłudze
-      </h3>
-      <p class="text-gray-500 mt-2">
-       Łatwy w użyciu, pełen funkcji, przejrzysty, bezpieczny i z aktywną pomocą techniczną, co gwarantuje niezawodność działania.
-      </p>
-     </div>
-     <div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
-      <div class="text-2xl text-pink-500">
-       🛠️
-      </div>
-      <h3 class="text-lg font-bold text-pink-500 mt-2">
-       Staranne wykonanie
-      </h3>
-      <p class="text-gray-500 mt-2">
-       Każdy wybór jest starannie przemyślany, przez co jest najlepszy
-      </p>
-     </div>
+</section>
+
+            
+<section id="showcase" class="mb-20 animate-pop" style="animation-delay: 0.9s;">
+    <h2 class="text-3xl font-bold text-center text-pink-500 mb-8">Zobacz Showcase</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="video-container bg-gray-800 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div class="relative aspect-video">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&enablejsapi=1" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-bold text-pink-500 mb-2">Pełna prezentacja funkcji</h3>
+                <p class="text-gray-300">Zobacz wszystkie możliwości ModzzMenu w akcji</p>
+            </div>
+        </div>
+      
+        <div class="video-container bg-gray-800 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div class="relative aspect-video">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/WRX6mHZ1Lc4?rel=0&enablejsapi=1" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+            <div class="p-4">
+                <h3 class="text-xl font-bold text-pink-500 mb-2">Showcase 1</h3>
+                <p class="text-gray-300">Zrobiony przez @Verton</p>
+            </div>
+        </div>
     </div>
-   </div>
-   <div class="flex flex-col md:flex-row justify-center items-center p-4">
+</section>
 
-    <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 m-4 w-full md:w-1/3 shadow-lg transform transition duration-500 hover:scale-105">
-     <div class="flex justify-center mb-4">
-      <img alt="Blue N logo" class="h-24" src="assets/images/logo.png"/>
-     </div>
-     <h2 class="text-center text-2xl font-bold mb-2 text-pink-500">
-      Modzz Free
-     </h2>
-     <p class="text-center text-lg mb-4 text-gray-300">
-      Co każde 2 dni klucz, Cena: Darmowe
-      <br/>
+            
+            <section class="mb-20 animate-pop" style="animation-delay: 1.0s;">
+                <h2 class="text-3xl font-bold text-center text-pink-500 mb-8">Ostatnie Aktualizacje</h2>
+                
+                <div class="update-card rounded-lg p-6 max-w-4xl mx-auto hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-start">
+                        <div class="bg-pink-500/20 rounded-full p-3 mr-4">
+                            <i class="fas fa-sync-alt text-pink-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-pink-500 mb-2">Wersja 2.6. - 12.04.2025</h3>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Zaktualizowano system ochrony przed wykryciem</li>
+                                <li>Zaktualizowano do najnowszej wersji gry</li>
+                                <li>Poprawki stabilności</li>
+                                <li>Optymalizacja ładowania custom headerów</li>
+                            </ul>
+                            <div class="mt-4 flex items-center text-sm text-gray-400">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span>Ostatnia aktualizacja: 12.04.2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-     </p>
-      <li>VFX Engine</li>
-      <li>Session Browser</li>
-      <li>Player Tracker</li>
-      <li>Player Magnet</li>
-      <li>Traffic Changer</li>
-      <li>Crashes & Kicks</li>
-      <li>Teleport All</li>
-      <li>Session Trolling</li>
-      <li>Rockstar ID Tools</li>
-      <li>Advanced Protections</li>
-      <li>Advanced Antycheat Bypass</li>
+           
+            <section id="gallery" class="mb-20 animate-pop" style="animation-delay: 1.1s;">
+                <h2 class="text-3xl font-bold text-center text-pink-500 mb-8">Galeria Zdjęć</h2>
+                
+                <div class="max-w-6xl mx-auto">
+                  
+                    <div class="relative overflow-hidden rounded-xl mb-6 border border-pink-500/30">
+                       
+                        <div class="aspect-video bg-gray-800 relative">
+                            <img id="mainImage" src="assets/images/gallery1.jpg" alt="Zdjęcie główne" class="w-full h-full object-cover">
+                            
+                     
+                            <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            
+                         
+                            <div class="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
+                                <span id="currentIndex">1</span>/<span id="totalImages">10</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                  
+                    <div class="grid grid-cols-5 gap-2 md:gap-4">
+                        <div class="thumbnail active cursor-pointer rounded-lg overflow-hidden border-2 border-pink-500" data-index="0">
+                            <img src="assets/images/thumb1.jpg" alt="Miniatura 1" class="w-full h-20 object-cover">
+                        </div>
+                        <div class="thumbnail cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-pink-500/50" data-index="1">
+                            <img src="assets/images/thumb2.jpg" alt="Miniatura 2" class="w-full h-20 object-cover">
+                        </div>
+                        <div class="thumbnail cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-pink-500/50" data-index="2">
+                            <img src="assets/images/thumb3.jpg" alt="Miniatura 3" class="w-full h-20 object-cover">
+                        </div>
+                        <div class="thumbnail cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-pink-500/50" data-index="3">
+                            <img src="assets/images/thumb4.jpg" alt="Miniatura 4" class="w-full h-20 object-cover">
+                        </div>
+                        <div class="thumbnail cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-pink-500/50" data-index="4">
+                            <img src="assets/images/thumb5.jpg" alt="Miniatura 5" class="w-full h-20 object-cover">
+                        </div>
+                        <div class="thumbnail cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-pink-500/50" data-index="5">
+                            <img src="assets/images/thumb6.jpg" alt="Miniatura 6" class="w-full h-20 object-cover">
+                        </div>
+                        <div class="thumbnail cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-pink-500/50" data-index="6">
+                            <img src="assets/images/thumb7.jpg" alt="Miniatura 7" class="w-full h-20 object-cover">
+                        </div>
+                        <div class="thumbnail cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-pink-500/50" data-index="7">
+                            <img src="assets/images/thumb8.jpg" alt="Miniatura 8" class="w-full h-20 object-cover">
+                        </div>
+                        <div class="thumbnail cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-pink-500/50" data-index="8">
+                            <img src="assets/images/thumb9.jpg" alt="Miniatura 9" class="w-full h-20 object-cover">
+                        </div>
+                        <div class="thumbnail cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-pink-500/50" data-index="9">
+                            <img src="assets/images/thumb10.jpg" alt="Miniatura 10" class="w-full h-20 object-cover">
+                        </div>
+                    </div>
+                    
+                 
+                    <div class="mt-4 bg-gray-800/80 p-4 rounded-lg border border-pink-500/20">
+                        <h3 id="imageTitle" class="text-xl font-bold text-pink-500 mb-2">Menu główne</h3>
+                        <p id="imageDescription" class="text-gray-300">Widok głównego interfejsu ModzzMenu z wszystkimi dostępnymi opcjami.</p>
+                    </div>
+                </div>
+            </section>
 
-     </ul>
-     <div class="flex flex-col space-y-2">
-      <a href="https://link-center.net/1284305/freegta5modmenu-key" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded text-center">
-       Zdobądź klucz za darmo
-      </a>
-     </div>
+          
+            <section class="mb-20 bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-xl p-8 border border-pink-500/20 animate-pop hover:shadow-xl transition-shadow duration-300">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="inline-flex items-center justify-center bg-pink-600/20 rounded-full p-3 mb-4">
+                        <i class="fas fa-headset text-2xl text-pink-400"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-pink-400 mb-4">Aktywny support</h2>
+                    <p class="text-xl text-gray-300 mb-6">Nasz zespół jest dostępny na Discordzie, aby pomóc Ci w każdej sprawie!</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="https://discord.gg/modzzmarket" class="btn-primary text-white px-6 py-3 rounded-lg flex items-center space-x-2">
+                            <i class="fab fa-discord"></i>
+                            <span>Dołącz po pomoc</span>
+                        </a>
+                        <div class="flex items-center bg-gray-800/50 px-4 py-2 rounded-lg">
+                            <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                            <span class="text-sm">Online: <span class="font-bold">4</span> moderatorów</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        
+        <footer class="bg-gray-900/80 py-8 border-t border-gray-800">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-lg font-bold text-pink-500 mb-4">ModzzMenu</h3>
+                        <p class="text-gray-400 text-sm">Najlepsze polskie menu modyfikacyjne do GTA V z pełnym bypassem antycheata.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-pink-500 mb-4">Linki</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#" class="hover:text-pink-500 transition">Strona główna</a></li>
+                            <li><a href="#features" class="hover:text-pink-500 transition">Funkcje</a></li>
+                            <li><a href="#pricing" class="hover:text-pink-500 transition">Cennik</a></li>
+                            <li><a href="#faq" class="hover:text-pink-500 transition">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-pink-500 mb-4">Social Media</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="https://discord.gg/modzzmarket" class="hover:text-pink-500 transition flex items-center"><i class="fab fa-discord mr-2"></i> Discord</a></li>
+                            <li><a href="https://tiktok.com/@modzzmarket_" class="hover:text-pink-500 transition flex items-center"><i class="fab fa-tiktok mr-2"></i> TikTok</a></li>
+                            <li><a href="#" class="hover:text-pink-500 transition flex items-center"><i class="fab fa-youtube mr-2"></i> YouTube</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-pink-500 mb-4">Pomoc</h3>
+                        <ul class="space-y-2 text-gray-400">
+                     
+                            <li><a href="#" class="hover:text-pink-500 transition">Kontakt</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pt-6 border-t border-gray-700 text-center text-gray-500 text-sm">
+                    <p>© 2025 ModzzMenu. Wszelkie prawa zastrzeżone.</p>
+                </div>
+            </div>
+        </footer>
     </div>
 
-    <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 m-4 w-full md:w-1/3 shadow-lg transform transition duration-500 hover:scale-105">
-     <div class="flex justify-center mb-4">
-      <img alt="Red N logo" class="h-24" src="assets/images/logo.png"/>
-     </div>
-     <h2 class="text-center text-2xl font-bold mb-2 text-pink-500">
-      Modzz Premium
-     </h2>
-     <p class="text-center text-lg mb-4 text-gray-300">
-      Klucz na zawsze, Cena: 20zł
-      <br/>
-      Cena na zawsze: 20zł
-     </p>
-     <ul class="list-disc list-inside mb-4 space-y-1 text-gray-300">
-      </p>
-      <li>VFX Engine</li>
-      <li>Session Browser</li>
-      <li>Player Tracker</li>
-      <li>Player Magnet</li>
-      <li>Traffic Changer</li>
-      <li>Crashes & Kicks</li>
-      <li>Teleport All</li>
-      <li>Session Trolling</li>
-      <li>Rockstar ID Tools</li>
-      <li>Advanced Protections</li>
-      <li>Advanced Antycheat Bypass</li>
+ 
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+           
+            const progressBar = document.getElementById('progressBar');
+            window.addEventListener('scroll', () => {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollProgress = (scrollTop / scrollHeight) * 100;
+                progressBar.style.width = scrollProgress + '%';
+            });
+            
+           
+            function createStars() {
+                const bg = document.getElementById('bg');
+                const starsCount = 100;
+                
+                for (let i = 0; i < starsCount; i++) {
+                    const star = document.createElement('div');
+                    star.classList.add('star');
+                    
+                 
+                    const size = Math.random() * 3;
+                    const x = Math.random() * 100;
+                    const y = Math.random() * 100;
+                    const duration = 5 + Math.random() * 10 + 's';
+                    const delay = Math.random() * 5 + 's';
+                    const opacity = 0.2 + Math.random() * 0.8;
+                    
+                    star.style.width = `${size}px`;
+                    star.style.height = `${size}px`;
+                    star.style.left = `${x}%`;
+                    star.style.top = `${y}%`;
+                    star.style.animationDuration = duration;
+                    star.style.animationDelay = delay;
+                    star.style.setProperty('--duration', duration);
+                    star.style.setProperty('--opacity', opacity);
+                    
+                    bg.appendChild(star);
+                }
+            }
+            
+            createStars();
+            
+          
+            const elements = document.querySelectorAll('.animate-pop');
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1 + 0.3}s`;
+            });
+            
+          
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const nav = document.querySelector('nav');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                nav.classList.toggle('hidden');
+                nav.classList.toggle('active');
+            });
+            
+           
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                 
+                    if (window.innerWidth <= 768) {
+                        nav.classList.add('hidden');
+                        nav.classList.remove('active');
+                    }
+                });
+            });
+            
+  
+            document.getElementById('logo').addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+         
+            const track = document.querySelector('.testimonials-track');
+            if (track) {
+                track.addEventListener('mouseenter', () => {
+                    track.style.animationPlayState = 'paused';
+                });
+                
+                track.addEventListener('mouseleave', () => {
+                    track.style.animationPlayState = 'running';
+                });
+            }
 
-     </ul
-     <div class="flex flex-col space-y-2">
-         <a href="https://discord.gg/Pm5rEd47DX" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded text-center">
-       Kup klucz (lifetime) 
-      </a>
+         
+            const discordWidget = document.querySelector('.discord-integration');
+            if(discordWidget) {
+                setInterval(() => {
+                    discordWidget.style.boxShadow = '0 0 20px rgba(88, 101, 242, 0.3)';
+                    setTimeout(() => {
+                        discordWidget.style.boxShadow = 'none';
+                    }, 1000);
+                }, 5000);
+            }
 
-     </div>
-    </div>
-   </div>
-     <h2 class="text-2xl font-bold text-pink-500 mt-16 slide-in">
-    Zobacz ModzzMenu w akcji
-   </h2>
-   <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 slide-in">
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
-     <video class="w-full rounded-lg" controls>
-      <source src="https://cdn.discordapp.com/attachments/1336681617971871827/1360677133868859733/modzz1.mp4?ex=67fbfcd4&is=67faab54&hm=e4d134fd57bce2194f8efaf476b78c868ba361e246159d33f8c1c75919672ec2&" type="video/mp4"/>
-      Twoja przeglądarka nie obsługuje odtwarzania wideo.
-     </video>
-    </div>
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
-     <video class="w-full rounded-lg" controls>
-      <source src="https://cdn.discordapp.com/attachments/1336681617971871827/1360677560517787720/modzz2.mp4?ex=67fbfd3a&is=67faabba&hm=803e47e367e1c0a13d693972d4b38df6c3bd2481b171b8671f30cdafd6385c07&" type="video/mp4"/>
-      Twoja przeglądarka nie obsługuje odtwarzania wideo.
-     </video>
-    </div>
-   </div>
-  </main>
-  <audio id="bgMusic" autoplay loop>
-   <source src="audio/mp3/modzz.mp3" type="audio/mp3"/>
-   Your browser does not support the audio element.
-  </audio>
-   <script>
-    window.addEventListener('load', function() {
-      const audio = document.getElementById('bgMusic');
-      audio.volume = 0.5;
+       
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+                    
+               
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        if (item !== answer) {
+                            item.style.maxHeight = null;
+                            item.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+                            item.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+                        }
+                    });
+                    
+                    
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
+                });
+            });
+            
+        
+            const menuPreview = document.getElementById('menuPreview');
+            if (menuPreview) {
+                menuPreview.addEventListener('mouseenter', () => {
+                    menuPreview.style.transform = 'scale(1.05) translateY(-5px)';
+                });
+                
+                menuPreview.addEventListener('mouseleave', () => {
+                    menuPreview.style.transform = 'scale(1) translateY(0)';
+                });
+            }
 
-      function playAudio() {
-        audio.play().catch(function(error) {
-          console.log("Audio playback failed:", error);
+            
+            const galleryImages = [
+                {
+                    src: "assets/images/gallery1.jpg",
+                    thumbnail: "assets/images/thumb1.jpg",
+                    title: "Menu główne",
+                    description: "Widok głównego interfejsu ModzzMenu z wszystkimi dostępnymi opcjami."
+                },
+                {
+                    src: "assets/images/gallery2.jpg",
+                    thumbnail: "assets/images/thumb2.jpg",
+                    title: "Opcje wizualne",
+                    description: "Zaawansowane opcje wizualne pozwalające na pełną personalizację wyglądu gry."
+                },
+                {
+                    src: "assets/images/gallery3.jpg",
+                    thumbnail: "assets/images/thumb3.jpg",
+                    title: "Modyfikacje pojazdów",
+                    description: "Panel modyfikacji pojazdów z możliwością dostosowania każdego parametru."
+                },
+                {
+                    src: "assets/images/gallery4.jpg",
+                    thumbnail: "assets/images/thumb4.jpg",
+                    title: "Teleportacja",
+                    description: "Funkcja szybkiej teleportacji do dowolnego miejsca na mapie."
+                },
+                {
+                    src: "assets/images/gallery5.jpg",
+                    thumbnail: "assets/images/thumb5.jpg",
+                    title: "Opcje gracza",
+                    description: "Panel z zaawansowanymi opcjami modyfikacji postaci gracza."
+                },
+                {
+                    src: "assets/images/gallery6.jpg",
+                    thumbnail: "assets/images/thumb6.jpg",
+                    title: "Efekty specjalne",
+                    description: "Biblioteka efektów specjalnych dostępnych w ModzzMenu."
+                },
+                {
+                    src: "assets/images/gallery7.jpg",
+                    thumbnail: "assets/images/thumb7.jpg",
+                    title: "Tryb niewidzialności",
+                    description: "Aktywny tryb niewidzialności - pozostań niewykrywalny dla innych graczy."
+                },
+                {
+                    src: "assets/images/gallery8.jpg",
+                    thumbnail: "assets/images/thumb8.jpg",
+                    title: "Opcje broni",
+                    description: "Panel modyfikacji broni z nieskończoną amunicją i dodatkowymi efektami."
+                },
+                {
+                    src: "assets/images/gallery9.jpg",
+                    thumbnail: "assets/images/thumb9.jpg",
+                    title: "Tryb VIP",
+                    description: "Ekskluzywne funkcje dostępne tylko dla użytkowników wersji Premium."
+                },
+                {
+                    src: "assets/images/gallery10.jpg",
+                    thumbnail: "assets/images/thumb10.jpg",
+                    title: "Ochrona przed wykryciem",
+                    description: "Zaawansowany system ochrony przed wykryciem przez antycheat."
+                }
+            ];
+
+            const mainImage = document.getElementById('mainImage');
+            const imageTitle = document.getElementById('imageTitle');
+            const imageDescription = document.getElementById('imageDescription');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const currentIndexEl = document.getElementById('currentIndex');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const totalImagesEl = document.getElementById('totalImages');
+            
+            let currentIndex = 0;
+            totalImagesEl.textContent = galleryImages.length;
+            
+            function updateImage(index) {
+                currentIndex = index;
+                mainImage.src = galleryImages[index].src;
+                imageTitle.textContent = galleryImages[index].title;
+                imageDescription.textContent = galleryImages[index].description;
+                currentIndexEl.textContent = index + 1;
+                
+                thumbnails.forEach(thumb => {
+                    thumb.classList.remove('active', 'border-pink-500');
+                    thumb.classList.add('border-transparent');
+                });
+                
+                thumbnails[index].classList.add('active', 'border-pink-500');
+                thumbnails[index].classList.remove('border-transparent');
+            }
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    updateImage(index);
+                });
+            });
+            
+            prevBtn.addEventListener('click', function() {
+                let newIndex = currentIndex - 1;
+                if (newIndex < 0) newIndex = galleryImages.length - 1;
+                updateImage(newIndex);
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                let newIndex = currentIndex + 1;
+                if (newIndex >= galleryImages.length) newIndex = 0;
+                updateImage(newIndex);
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                } else if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                }
+            });
+            
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'scale(1.05)';
+                    }
+                });
+                
+                thumb.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'scale(1)';
+                    }
+                });
+            });
+            
+            mainImage.addEventListener('click', function() {
+                this.classList.add('scale-105');
+                setTimeout(() => {
+                    this.classList.remove('scale-105');
+                }, 200);
+            });
+            
+        
+            updateImage(0);
         });
-      }
-
-      document.addEventListener('click', playAudio, { once: true });
-      document.addEventListener('keydown', playAudio, { once: true });
-
-      playAudio();
-    });
-  </script>
- </body>
+    </script>
+</body>
 </html>
