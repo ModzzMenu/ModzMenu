@@ -40,6 +40,12 @@ body {
     100% { box-shadow: 0 0 10px rgba(236, 72, 153, 0.3); }
 }
 
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 /* Components */
 .main-header {
     background: rgba(30, 41, 59, 0.95);
@@ -78,6 +84,11 @@ body {
     width: 100%;
 }
 
+.nav-link:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
 /* Hero Section */
 .hero-title {
     text-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
@@ -108,6 +119,10 @@ body {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 15px 30px -10px rgba(236, 72, 153, 0.3);
     border-color: var(--primary);
+}
+
+.feature-card:focus-within {
+    outline: 2px solid var(--primary);
 }
 
 .feature-icon {
@@ -173,13 +188,21 @@ body {
 
 .discord-join-btn {
     background: var(--discord);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, background 0.5s ease;
+    background-size: 200% 200%;
+    background-position: 0% 50%;
 }
 
 .discord-join-btn:hover {
     background: #4752c4;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px -5px rgba(88, 101, 242, 0.4);
+    background-position: 100% 50%;
+}
+
+.discord-join-btn:focus {
+    outline: 2px solid var(--discord);
+    outline-offset: 2px;
 }
 
 /* Testimonials */
@@ -236,6 +259,11 @@ body {
     color: var(--primary);
 }
 
+.social-links a:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
 /* Utility Classes */
 .animate-pop {
     animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -243,6 +271,56 @@ body {
 
 .float-anim {
     animation: float 4s ease-in-out infinite;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--text);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
+}
+
+.back-to-top:focus {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Responsive Adjustments */
@@ -266,5 +344,9 @@ body {
     @keyframes scroll-mobile {
         0% { transform: translateX(0); }
         100% { transform: translateX(-100%); }
+    }
+
+    .nav-link {
+        padding: 10px 0;
     }
 }

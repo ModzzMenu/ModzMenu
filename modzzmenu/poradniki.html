@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poradniki - ModzzMenu</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/modern.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: url('../assets/images/banner.gif') fixed center/cover;
+            color: #f1f5f9;
+            min-height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+        }
+        .guide-container {
+            max-width: 800px;
+            margin: 60px auto 0 auto;
+            background: rgba(30, 41, 59, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(236, 72, 153, 0.15);
+            padding: 40px 32px;
+            border: 1px solid rgba(236, 72, 153, 0.15);
+        }
+        h1, h2, h3 {
+            color: #ec4899;
+        }
+        .faq-section {
+            margin-top: 32px;
+        }
+        .faq-item {
+            background: rgba(30,41,59,0.8);
+            border-radius: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ec489933;
+        }
+        .faq-question {
+            padding: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(30,41,59,0.6);
+        }
+        .faq-answer-content {
+            padding: 16px;
+        }
+        @media (max-width: 600px) {
+            .guide-container { padding: 20px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container" style="max-width:950px;">
+        <h1 style="font-size:2.3em; font-weight:900; color:#818cf8; text-align:center; margin-bottom:8px; letter-spacing:-1px;">Poradniki ModzzMenu</h1>
+        <p style="color:#bdbdfd; text-align:center; margin-bottom:38px; font-size:1.15em;">Praktyczne instrukcje krok po kroku oraz odpowiedzi na najczęstsze pytania.</p>
+
+        <!-- Sekcja krok po kroku -->
+        <h2 style="color:#ec4899; font-size:1.5em; font-weight:800; margin-bottom:18px; text-align:center;">Jak obejść BattlEye Anti-Cheat – Krok po kroku</h2>
+        <div style="display:flex; flex-direction:column; gap:28px; margin-bottom:48px;">
+            <div style="background:rgba(36,37,60,0.98); border-radius:18px; box-shadow:0 4px 32px rgba(129,140,248,0.10); padding:32px 24px 28px 24px; border:1.5px solid #818cf855; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:7px;background:linear-gradient(90deg,#818cf8,#ec4899);border-radius:18px 18px 0 0;"></div>
+                <div style="display:flex;align-items:center;gap:16px;">
+                    <div style="background:linear-gradient(135deg,#818cf8,#ec4899);color:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.7em;border-radius:12px;box-shadow:0 2px 8px #818cf855;"><i class='fas fa-power-off'></i></div>
+                    <div>
+                        <div style="font-size:1.08em;font-weight:700;color:#fff;">Krok 1</div>
+                        <div style="font-size:1.18em;font-weight:800;color:#818cf8;">Wyłącz BattlEye</div>
+                        <div style="color:#bdbdfd; font-size:1em; margin-top:2px;">Przejdź do ustawień Rockstar Games Launcher i upewnij się, że BattlEye jest wyłączony.</div>
+                    </div>
+                </div>
+            </div>
+            <div style="background:rgba(36,37,60,0.98); border-radius:18px; box-shadow:0 4px 32px rgba(236,72,153,0.10); padding:32px 24px 28px 24px; border:1.5px solid #ec489955; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:7px;background:linear-gradient(90deg,#ec4899,#818cf8);border-radius:18px 18px 0 0;"></div>
+                <div style="display:flex;align-items:center;gap:16px;">
+                    <div style="background:linear-gradient(135deg,#ec4899,#818cf8);color:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.7em;border-radius:12px;box-shadow:0 2px 8px #ec489955;"><i class='fas fa-terminal'></i></div>
+                    <div>
+                        <div style="font-size:1.08em;font-weight:700;color:#fff;">Krok 2</div>
+                        <div style="font-size:1.18em;font-weight:800;color:#ec4899;">Dodaj komendę do uruchamiania</div>
+                        <div style="color:#f9a8d4; font-size:1em; margin-top:2px;">Otwórz Steam lub Epic, znajdź polecenie uruchamiania i wpisz <code>-nobattleye</code>.</div>
+                    </div>
+                </div>
+            </div>
+            <div style="background:rgba(36,37,60,0.98); border-radius:18px; box-shadow:0 4px 32px rgba(129,140,248,0.10); padding:32px 24px 28px 24px; border:1.5px solid #818cf855; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:7px;background:linear-gradient(90deg,#818cf8,#ec4899);border-radius:18px 18px 0 0;"></div>
+                <div style="display:flex;align-items:center;gap:16px;">
+                    <div style="background:linear-gradient(135deg,#818cf8,#ec4899);color:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.7em;border-radius:12px;box-shadow:0 2px 8px #818cf855;"><i class='fas fa-gamepad'></i></div>
+                    <div>
+                        <div style="font-size:1.08em;font-weight:700;color:#fff;">Krok 3</div>
+                        <div style="font-size:1.18em;font-weight:800;color:#818cf8;">Uruchom grę i poczekaj na menu</div>
+                        <div style="color:#bdbdfd; font-size:1em; margin-top:2px;">Nie wchodź do trybu fabularnego ani online! Poczekaj na ekran głównego menu GTA V.</div>
+                    </div>
+                </div>
+            </div>
+            <div style="background:rgba(36,37,60,0.98); border-radius:18px; box-shadow:0 4px 32px rgba(236,72,153,0.10); padding:32px 24px 28px 24px; border:1.5px solid #ec489955; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:7px;background:linear-gradient(90deg,#ec4899,#818cf8);border-radius:18px 18px 0 0;"></div>
+                <div style="display:flex;align-items:center;gap:16px;">
+                    <div style="background:linear-gradient(135deg,#ec4899,#818cf8);color:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.7em;border-radius:12px;box-shadow:0 2px 8px #ec489955;"><i class='fas fa-bolt'></i></div>
+                    <div>
+                        <div style="font-size:1.08em;font-weight:700;color:#fff;">Krok 4</div>
+                        <div style="font-size:1.18em;font-weight:800;color:#ec4899;">Wstrzyknij ModzzMenu</div>
+                        <div style="color:#f9a8d4; font-size:1em; margin-top:2px;">Będąc w głównym menu gry, wstrzyknij ModzzMenu (np. przez loader).</div>
+                    </div>
+                </div>
+            </div>
+            <div style="background:rgba(36,37,60,0.98); border-radius:18px; box-shadow:0 4px 32px rgba(129,140,248,0.10); padding:32px 24px 28px 24px; border:1.5px solid #818cf855; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:7px;background:linear-gradient(90deg,#818cf8,#ec4899);border-radius:18px 18px 0 0;"></div>
+                <div style="display:flex;align-items:center;gap:16px;">
+                    <div style="background:linear-gradient(135deg,#818cf8,#ec4899);color:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.7em;border-radius:12px;box-shadow:0 2px 8px #818cf855;"><i class='fas fa-user'></i></div>
+                    <div>
+                        <div style="font-size:1.08em;font-weight:700;color:#fff;">Krok 5</div>
+                        <div style="font-size:1.18em;font-weight:800;color:#818cf8;">Wejdź do trybu fabularnego</div>
+                        <div style="color:#bdbdfd; font-size:1em; margin-top:2px;">Po wstrzyknięciu DLL wybierz <b>przejście do trybu fabularnego</b> (Story Mode).</div>
+                    </div>
+                </div>
+            </div>
+            <div style="background:rgba(36,37,60,0.98); border-radius:18px; box-shadow:0 4px 32px rgba(236,72,153,0.10); padding:32px 24px 28px 24px; border:1.5px solid #ec489955; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:7px;background:linear-gradient(90deg,#ec4899,#818cf8);border-radius:18px 18px 0 0;"></div>
+                <div style="display:flex;align-items:center;gap:16px;">
+                    <div style="background:linear-gradient(135deg,#ec4899,#818cf8);color:#fff;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.7em;border-radius:12px;box-shadow:0 2px 8px #ec489955;"><i class='fas fa-network-wired'></i></div>
+                    <div>
+                        <div style="font-size:1.08em;font-weight:700;color:#fff;">Krok 6</div>
+                        <div style="font-size:1.18em;font-weight:800;color:#ec4899;">Dołącz do sesji online</div>
+                        <div style="color:#f9a8d4; font-size:1em; margin-top:2px;">Będąc w trybie fabularnym, otwórz ModzzMenu, przejdź do <b>Network &gt; Session Starter</b> i dołącz do publicznej lub prywatnej sesji.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <h2 style="color:#ec4899; text-align:center; margin-bottom: 24px; font-size:1.4em; font-weight:800;">FAQ – Najczęściej zadawane pytania</h2>
+        <div class="faq-section" style="max-width: 700px; margin: 0 auto;">
+            <div class="faq-item" style="background:rgba(30,41,59,0.8); border-radius:12px; margin-bottom:18px; border: 1.5px solid #818cf855;">
+                <div class="faq-question" style="padding:18px; cursor:pointer; font-weight:800; display:flex; justify-content:space-between; align-items:center; font-size:1.13em;">
+                    <span><i class="fas fa-download" style="color:#818cf8; margin-right:10px;"></i>Jak zainstalować ModzzMenu?</span>
+                    <span style="font-size:1.3em;">&#9660;</span>
+                </div>
+                <div class="faq-answer" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; background:rgba(30,41,59,0.6);">
+                    <div class="faq-answer-content" style="padding:18px;">
+                        <ol style="margin-left:1.5em;">
+                            <li>Pobierz plik ze strony internetowej.</li>
+                            <li>Wypakuj archiwum.</li>
+                            <li>Uruchom loadera jako administrator.</li>
+                            <li>Wprowadź swój klucz licencyjny.</li>
+                            <li>Postępuj zgodnie z instrukcją w pliku.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item" style="background:rgba(30,41,59,0.8); border-radius:12px; margin-bottom:18px; border: 1.5px solid #ec489955;">
+                <div class="faq-question" style="padding:18px; cursor:pointer; font-weight:800; display:flex; justify-content:space-between; align-items:center; font-size:1.13em;">
+                    <span><i class="fas fa-exclamation-triangle" style="color:#ec4899; margin-right:10px;"></i>Co zrobić, gdy menu nie działa po aktualizacji GTA V?</span>
+                    <span style="font-size:1.3em;">&#9660;</span>
+                </div>
+                <div class="faq-answer" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; background:rgba(30,41,59,0.6);">
+                    <div class="faq-answer-content" style="padding:18px;">
+                        <ul style="margin-left:1.5em;">
+                            <li>Sprawdź Discorda – tam pojawiają się najnowsze informacje o kompatybilności.</li>
+                            <li>Poczekaj na aktualizację ModzzMenu – zespół pracuje nad poprawkami.</li>
+                            <li>Nie próbuj używać starej wersji na nowej aktualizacji gry.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item" style="background:rgba(30,41,59,0.8); border-radius:12px; margin-bottom:18px; border: 1.5px solid #818cf855;">
+                <div class="faq-question" style="padding:18px; cursor:pointer; font-weight:800; display:flex; justify-content:space-between; align-items:center; font-size:1.13em;">
+                    <span><i class="fas fa-headset" style="color:#818cf8; margin-right:10px;"></i>Jak uzyskać wsparcie techniczne?</span>
+                    <span style="font-size:1.3em;">&#9660;</span>
+                </div>
+                <div class="faq-answer" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; background:rgba(30,41,59,0.6);">
+                    <div class="faq-answer-content" style="padding:18px;">
+                        <ul style="margin-left:1.5em;">
+                            <li>Dołącz na <a href="https://discord.gg/modzz" target="_blank">nasz Discord</a> i otwórz ticket w odpowiednim dziale.</li>
+                            <li>Opisz dokładnie swój problem i dołącz screeny/błędy jeśli to możliwe.</li>
+                            <li>Poczekaj na odpowiedź moderatora lub supportu.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    // Prosty JS do rozkładania FAQ
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', function() {
+            const answer = this.parentElement.querySelector('.faq-answer');
+            const icon = this.querySelector('span:last-child');
+            if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
+                answer.style.maxHeight = '0px';
+                icon.innerHTML = '&#9660;';
+            } else {
+                document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = '0px');
+                document.querySelectorAll('.faq-question span:last-child').forEach(i => i.innerHTML = '&#9660;');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.innerHTML = '&#9650;';
+            }
+        });
+    });
+    </script>
+</body>
+</html> 

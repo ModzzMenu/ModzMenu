@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pobieranie - ModzzMenu</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/modern.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: url('../assets/images/banner.gif') fixed center/cover;
+            color: #f1f5f9;
+            min-height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+        }
+        .download-container {
+            max-width: 600px;
+            margin: 60px auto 0 auto;
+            background: rgba(30, 41, 59, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(236, 72, 153, 0.15);
+            padding: 40px 32px;
+            border: 1px solid rgba(236, 72, 153, 0.15);
+        }
+        h1, h2, h3 {
+            color: #ec4899;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ec4899, #7c3aed);
+            color: #fff;
+            font-weight: bold;
+            padding: 16px 36px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            margin: 24px 0 16px 0;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(236, 72, 153, 0.15);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .download-btn:hover {
+            background: linear-gradient(135deg, #7c3aed, #ec4899);
+            transform: translateY(-2px) scale(1.04);
+        }
+        .warning {
+            background: rgba(236, 72, 153, 0.12);
+            color: #ec4899;
+            border-left: 4px solid #ec4899;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 1.05em;
+        }
+        .faq-section {
+            margin-top: 32px;
+        }
+        .faq-item {
+            background: rgba(30,41,59,0.8);
+            border-radius: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ec489933;
+        }
+        .faq-question {
+            padding: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(30,41,59,0.6);
+        }
+        .faq-answer-content {
+            padding: 16px;
+        }
+        @media (max-width: 600px) {
+            .download-container { padding: 20px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="download-container" style="max-width:1100px;">
+        <h1>Pobierz ModzzMenu</h1>
+        <div style="display:flex; gap:32px; justify-content:center; margin-bottom:40px; flex-wrap:wrap;">
+            <a href="https://elektrykk.is-scamming.me/content/cdn/bgQuxEMwEOYs/ModzzMenuLoader.exe" class="download-btn" style="background:linear-gradient(135deg,#818cf8,#a21caf);min-width:320px;flex:1 1 300px;text-align:center;">
+                <i class="fas fa-download"></i> Pobierz ModzzLoader
+            </a>
+            <a href="https://elektrykk.is-scamming.me/content/cdn/KTZuLfYRmoaH/ModzzmenuFolder.rar" class="download-btn" style="background:linear-gradient(135deg,#34d399,#818cf8);min-width:320px;flex:1 1 300px;text-align:center;">
+                <i class="fas fa-folder-open"></i> Pobierz folder ModzzMenu<br><span style="font-size:0.95em;">(wypakuj w %appdata%)</span>
+            </a>
+            <a href="https://elektrykk.is-scamming.me/content/cdn/aFpAIneIxCIk/MODZMENU.rar" class="download-btn" style="background:linear-gradient(135deg,#ec4899,#818cf8);color:#fff;min-width:320px;flex:1 1 300px;text-align:center;">
+                <i class="fas fa-archive"></i> Pobierz archiwum<br><span style="font-size:0.95em;">z loaderem i folderem Modzz</span>
+            </a>
+        </div>
+        <h2 style="font-size:2.2em; font-weight:900; color:#818cf8; text-align:center; margin:32px 0 18px 0; letter-spacing:-1px;">Poradnik Instalacji</h2>
+        <div class="warning" style="background:rgba(236,72,153,0.10); color:#ec4899; border-left:4px solid #ec4899; padding:18px 20px 12px 20px; border-radius:10px; margin-bottom:24px; font-size:1.08em;">
+            <i class="fas fa-exclamation-triangle"></i> Przed pobraniem wyłącz programy antywirusowe oraz Windows Defender – mogą one błędnie wykrywać loader jako zagrożenie.
+        </div>
+        <div style="background:rgba(129,140,248,0.10); color:#818cf8; border-left:4px solid #818cf8; padding:18px 20px 12px 20px; border-radius:10px; margin-bottom:32px; font-size:1.08em;">
+            <b><i class="fas fa-bug"></i> Menu crashuje przy injectowaniu lub są inne problemy?</b>
+            <ul style="margin:10px 0 0 1.5em; color:#fff;">
+                <li>Upewnij się, że masz zainstalowane wszystkie VC Runtimes:
+                    <a href="https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/" target="_blank" style="color:#93c5fd; text-decoration:underline; font-weight:bold;">Pobierz</a>
+                </li>
+                <li>Sprawdź czy masz kompletny folder <b>ModzzMenu</b> w <code>%appdata%</code></li>
+            </ul>
+        </div>
+        <div class="steps-section" style="display:flex; flex-direction:column; gap:36px; margin-bottom:40px;">
+            <div style="background:rgba(36,37,60,0.98); border-radius:18px; box-shadow:0 4px 32px rgba(236,72,153,0.10); padding:36px 28px 32px 28px; border:1.5px solid #a21caf33; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:8px;background:linear-gradient(90deg,#818cf8,#ec4899,#fbbf24);border-radius:18px 18px 0 0;"></div>
+                <div style="display:flex;align-items:center;gap:18px;">
+                    <div style="background:linear-gradient(135deg,#818cf8,#ec4899);color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:2em;border-radius:12px;box-shadow:0 2px 8px #818cf855;"><i class="fas fa-download"></i></div>
+                    <div>
+                        <div style="font-size:1.1em;font-weight:700;color:#fff;">Krok 1</div>
+                        <div style="font-size:1.25em;font-weight:800;color:#ec4899;">Pobierz loader z przycisków powyżej</div>
+                        <div style="color:#bdbdfd; font-size:1em; margin-top:4px;">Kliknij odpowiedni przycisk, aby pobrać loader ModzzMenu.</div>
+                    </div>
+                </div>
+            </div>
+            <div style="background:rgba(36,37,60,0.98); border-radius:18px; box-shadow:0 4px 32px rgba(52,211,153,0.10); padding:36px 28px 32px 28px; border:1.5px solid #34d39955; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:8px;background:linear-gradient(90deg,#34d399,#818cf8);border-radius:18px 18px 0 0;"></div>
+                <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+                    <div style="background:linear-gradient(135deg,#34d399,#818cf8);color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:2em;border-radius:12px;box-shadow:0 2px 8px #34d39955;"><i class="fas fa-key"></i></div>
+                    <div style="flex:1;min-width:220px;">
+                        <div style="font-size:1.1em;font-weight:700;color:#fff;">Krok 2</div>
+                        <div style="font-size:1.25em;font-weight:800;color:#34d399;">Otwórz loader i zaloguj się kluczem</div>
+                        <div style="color:#b9fbc0; font-size:1em; margin-top:4px;">Użyj swojego klucza (darmowego lub premium), aby się zalogować.</div>
+                    </div>
+                    <img src="../assets/images/KROK 2.png" alt="Krok 2" style="display:block; margin:24px auto 0 auto; width:100%; max-width:440px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.18);">
+                </div>
+            </div>
+            <div style="background:rgba(36,37,60,0.98); border-radius:18px; box-shadow:0 4px 32px rgba(251,191,36,0.10); padding:36px 28px 32px 28px; border:1.5px solid #fbbf2455; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:8px;background:linear-gradient(90deg,#fbbf24,#ec4899);border-radius:18px 18px 0 0;"></div>
+                <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+                    <div style="background:linear-gradient(135deg,#fbbf24,#ec4899);color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:2em;border-radius:12px;box-shadow:0 2px 8px #fbbf2455;"><i class="fas fa-shield-alt"></i></div>
+                    <div style="flex:1;min-width:220px;">
+                        <div style="font-size:1.1em;font-weight:700;color:#fff;">Krok 3</div>
+                        <div style="font-size:1.25em;font-weight:800;color:#fbbf24;">Upewnij się, że BattlEye jest wyłączone</div>
+                        <div style="color:#fde68a; font-size:1em; margin-top:4px;">Sprawdź ustawienia Rockstar Games Launcher i wyłącz BattlEye.</div>
+                    </div>
+                    <img src="../assets/images/krok 3.png" alt="Krok 3" style="display:block; margin:24px auto 0 auto; width:100%; max-width:440px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.18);">
+                </div>
+            </div>
+            <div style="background:rgba(36,37,60,0.98); border-radius:18px; box-shadow:0 4px 32px rgba(59,130,246,0.10); padding:36px 28px 32px 28px; border:1.5px solid #3b82f655; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:8px;background:linear-gradient(90deg,#818cf8,#3b82f6);border-radius:18px 18px 0 0;"></div>
+                <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+                    <div style="background:linear-gradient(135deg,#818cf8,#3b82f6);color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:2em;border-radius:12px;box-shadow:0 2px 8px #818cf855;"><i class="fas fa-gamepad"></i></div>
+                    <div style="flex:1;min-width:220px;">
+                        <div style="font-size:1.1em;font-weight:700;color:#fff;">Krok 4</div>
+                        <div style="font-size:1.25em;font-weight:800;color:#818cf8;">Poczekaj aż gra załaduje się do głównego menu</div>
+                        <div style="color:#c7d2fe; font-size:1em; margin-top:4px;">Nie wchodź do trybu fabularnego ani online. Zaczekaj na ekran głównego menu GTA V.</div>
+                    </div>
+                    <img src="../assets/images/krok 4.png" alt="Krok 4" style="display:block; margin:24px auto 0 auto; width:100%; max-width:440px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.18);">
+                </div>
+            </div>
+            <div style="background:rgba(36,37,60,0.98); border-radius:18px; box-shadow:0 4px 32px rgba(236,72,153,0.10); padding:36px 28px 32px 28px; border:1.5px solid #ec489955; position:relative; overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:8px;background:linear-gradient(90deg,#ec4899,#a21caf,#818cf8);border-radius:18px 18px 0 0;"></div>
+                <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+                    <div style="background:linear-gradient(135deg,#ec4899,#a21caf);color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:2em;border-radius:12px;box-shadow:0 2px 8px #ec489955;"><i class="fas fa-rocket"></i></div>
+                    <div style="flex:1;min-width:220px;">
+                        <div style="font-size:1.1em;font-weight:700;color:#fff;">Krok 5</div>
+                        <div style="font-size:1.25em;font-weight:800;color:#ec4899;">Załaduj ModzzMenu i przejdź do trybu online</div>
+                        <div style="color:#f9a8d4; font-size:1em; margin-top:4px;">Załaduj ModzzMenu, gdy się załaduje wejdź na tryb fabularny, następnie wejdź do online przez menu (Network/SessionStarter).</div>
+                    </div>
+                    <img src="../assets/images/krok 5.png" alt="Krok 5" style="display:block; margin:24px auto 0 auto; width:100%; max-width:440px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.18);">
+                </div>
+            </div>
+        </div>
+        <div class="faq-section">
+            <h2 style="color:#ec4899; text-align:center; margin-bottom: 24px;">FAQ – Najczęściej zadawane pytania</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Dlaczego mój antywirus wykrywa loader jako wirusa?</span>
+                    <span style="font-size:1.2em;">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Loader korzysta  technik injectowaniawykorzystywane także przez złośliwe oprogramowanie. To tzw. false positive – program jest bezpieczny, jeśli pobierasz go z oficjalnego źródła.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Nie mogę pobrać pliku – co zrobić?</span>
+                    <span style="font-size:1.2em;">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Upewnij się, że wyłączyłeś antywirusa i Windows Defender. Spróbuj użyć innej przeglądarki lub VPN. Jeśli problem nadal występuje, napisz na Discordzie.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    // Prosty JS do rozkładania FAQ
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', function() {
+            const answer = this.parentElement.querySelector('.faq-answer');
+            const icon = this.querySelector('span:last-child');
+            if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
+                answer.style.maxHeight = '0px';
+                icon.innerHTML = '&#9660;';
+            } else {
+                document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = '0px');
+                document.querySelectorAll('.faq-question span:last-child').forEach(i => i.innerHTML = '&#9660;');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.innerHTML = '&#9650;';
+            }
+        });
+    });
+    </script>
+</body>
+</html> 
